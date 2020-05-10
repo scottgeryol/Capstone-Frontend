@@ -2,7 +2,7 @@
   <div class="container">
     <h1>All Recipes</h1>
     <div v-for="recipe in recipes">
-      <h2>{{ recipe.name }}</h2>
+      <h2>{{ recipes.name }}</h2>
     </div>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
   data: function() {
     return {
       recipes: [],
+      // name: "",
     };
   },
   created: function() {

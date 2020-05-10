@@ -4,6 +4,8 @@
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>|
       <router-link to="/recipes">All Recipes</router-link>|
+      <router-link to="/recipes/new">Create a Recipe</router-link>|
+      <router-link to="/ingredients">All Ingredients</router-link>|
     </div>
     <router-view />
   </div>

@@ -17,7 +17,7 @@ const routes = [
   { path: "/signup", name: "signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
-  { path: "/recipes", name: "recipes-new", component: RecipesNew },
+  { path: "/recipes/new", name: "recipes-new", component: RecipesNew },
   { path: "/ingredients", name: "ingredeient-index", component: IngredientsIndex },
 ];
 

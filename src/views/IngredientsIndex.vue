@@ -2,9 +2,9 @@
   <div class="ingredients">
     <h1>All Ingredients</h1>
     <div v-for="ingredient in ingredients">
-      <p>{{ ingredient.name }}</p>
+      <li>{{ ingredient.name }}</li>
       <!-- <img v-bind:src="recipe.image_url" alt /> -->
-      <!-- <button>More info</button> -->
+      <button>More info</button>
     </div>
   </div>
 </template>

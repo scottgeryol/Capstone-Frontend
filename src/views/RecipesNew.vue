@@ -6,18 +6,18 @@
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>Name:
-      <input type="text" v-model="newRecipeName" />
+      <input type="string" v-model="newRecipeName" />
       Description:
-      <input type="text" v-model="newRecipeDescription" />
+      <input type="string" v-model="newRecipeDescription" />
       Directions:
-      <input type="text" v-model="newRecipeDirections" />
+      <input type="string" v-model="newRecipeDirections" />
       Prep Time:
-      <input type="text" v-model="newRecipePrepTime" />
+      <input type="integer" v-model="newRecipePrepTime" />
       Notes:
-      <input type="text" v-model="newRecipeNotes" />
+      <input type="string" v-model="newRecipeNotes" />
       Image:
-      <input type="text" v-model="newRecipeImageUrl" />
-      <input type="submit" value="Create" />
+      <input type="string" v-model="newRecipeImageUrl" />
+      <input type="submit" value="New" />
     </form>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
   },
   // created: function() {},
   methods: {
-    createPhoto: function() {
+    createRecipe: function() {
       var params = {
         name: this.newRecipeName,
         description: this.newRecipeDescription,

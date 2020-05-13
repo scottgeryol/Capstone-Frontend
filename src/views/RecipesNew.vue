@@ -7,6 +7,8 @@
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>Name:
       <input type="string" v-model="newRecipeName" />
+      Chef:
+      <input type="string" v-model="newRecipeChef" />
       Description:
       <input type="string" v-model="newRecipeDescription" />
       Directions:
@@ -29,6 +31,7 @@ export default {
   data: function() {
     return {
       newRecipeName: "",
+      newRecipeChef: "",
       newRecipeDescription: "",
       newRecipeDirections: "",
       newRecipePrepTime: "",

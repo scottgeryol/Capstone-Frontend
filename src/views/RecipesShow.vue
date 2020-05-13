@@ -2,6 +2,7 @@
   <div class="container">
     <img v-bind:src="recipe.image_url" alt />
     <h2>Name: {{ recipe.name }}</h2>
+    <p>Chef: {{ recipe.chef }}</p>
     <p>Description: {{ recipe.description }}</p>
     <p>Ingredients: {{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</p>
     <p>Prep Time: {{ recipe.prep_time }}</p>

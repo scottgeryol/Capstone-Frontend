@@ -7,6 +7,8 @@ import Logout from "../views/Logout.vue";
 import RecipesIndex from "../views/RecipesIndex.vue";
 import RecipesNew from "../views/RecipesNew.vue";
 import IngredientsIndex from "../views/IngredientsIndex.vue";
+import RecipesShow from "../views/RecipesShow.vue";
+import IngredientUserIndex from "../views/IngredientUserIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +21,8 @@ const routes = [
   { path: "/logout", name: "logout", component: Logout },
   { path: "/recipes/new", name: "recipes-new", component: RecipesNew },
   { path: "/ingredients", name: "ingredeient-index", component: IngredientsIndex },
+  { path: "/recipes/:id", name: "recipes-show", component: RecipesShow },
+  { path: "/ingredient_users", name: "ingredient_user-index", component: IngredientUserIndex },
 ];
 
 const router = new VueRouter({

@@ -3,8 +3,10 @@
     <h1>All Ingredients</h1>
     <div v-for="ingredient in ingredients">
       <li>{{ ingredient.name }}</li>
+      <p>{{ ingredient.price }}</p>
       <!-- <img v-bind:src="recipe.image_url" alt /> -->
       <button>More info</button>
+      <button>Add to Grocery Bag!</button>
     </div>
   </div>
 </template>

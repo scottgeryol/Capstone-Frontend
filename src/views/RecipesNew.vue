@@ -15,7 +15,7 @@
       <input type="integer" v-model="newRecipePrepTime" />
       Notes:
       <input type="string" v-model="newRecipeNotes" />
-      Image:
+      Image Url:
       <input type="string" v-model="newRecipeImageUrl" />
       <input type="submit" value="New" />
     </form>

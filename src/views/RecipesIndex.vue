@@ -4,8 +4,9 @@
     <div v-for="recipe in recipes">
       <h2>{{ recipe.name }}</h2>
       <p>{{ recipe.description }}</p>
+      <p>{{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</p>
       <img v-bind:src="recipe.image_url" alt />
-      <button>More info</button>
+      <router-link v-bind:to="`/recipes/${recipe.id}`">View Recipe!</router-link>
     </div>
   </div>
 </template>
@@ -28,3 +29,43 @@ export default {
   methods: {},
 };
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

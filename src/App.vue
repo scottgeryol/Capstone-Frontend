@@ -6,6 +6,7 @@
       <router-link to="/recipes">All Recipes</router-link>|
       <router-link to="/recipes/new">Create a Recipe</router-link>|
       <router-link to="/ingredients">All Ingredients</router-link>|
+      <router-link to="/ingredient_users">My Pantry</router-link>|
     </div>
     <router-view />
   </div>

@@ -2,7 +2,7 @@
   <div class="ingredient_users">
     <h1>Welcome to your Pantry!</h1>
     <div v-for="ingredient_user in ingredient_users">
-      <p>{{ ingredient_user.ingredient.name }}</p>
+      <!-- <p>{{ ingredient_user.ingredient.name }}</p> -->
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      ingredient_users: [],
+      ingredient_user: [],
     };
   },
   created: function() {

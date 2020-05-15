@@ -9,16 +9,19 @@
       <input type="string" v-model="newRecipeName" />
       Chef:
       <input type="string" v-model="newRecipeChef" />
+      Ingredients:
+      <input type="string" v-model="newRecipeIngredients" />
       Description:
       <input type="string" v-model="newRecipeDescription" />
       Directions:
       <input type="string" v-model="newRecipeDirections" />
       Prep Time:
-      <input type="integer" v-model="newRecipePrepTime" />
+      <input type="string" v-model="newRecipePrepTime" />
       Notes:
       <input type="string" v-model="newRecipeNotes" />
       Image Url:
       <input type="string" v-model="newRecipeImageUrl" />
+      <p></p>
       <input type="submit" value="New" />
     </form>
   </div>
@@ -32,6 +35,7 @@ export default {
     return {
       newRecipeName: "",
       newRecipeChef: "",
+      newRecipeIngredients: "",
       newRecipeDescription: "",
       newRecipeDirections: "",
       newRecipePrepTime: "",
@@ -46,6 +50,8 @@ export default {
     createRecipe: function() {
       var params = {
         name: this.newRecipeName,
+        chef: this.newRecipeChef,
+        ingredients: this.newRecipeIngredients,
         description: this.newRecipeDescription,
         directions: this.newRecipeDirections,
         prep_time: this.newRecipePrepTime,

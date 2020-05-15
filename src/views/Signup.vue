@@ -9,9 +9,11 @@
         <div class="form-group">
           <label>First Name:</label>
           <input type="text" class="form-control" v-model="first_name" />
+          <!-- <small>{{ 25 - first_name.length }}</small> -->
           <div class="form-group">
             <label>Last Name:</label>
             <input type="text" class="form-control" v-model="last_name" />
+            <!-- <small>{{ 25 - last_name.length }}</small> -->
           </div>
         </div>
         <div class="form-group">

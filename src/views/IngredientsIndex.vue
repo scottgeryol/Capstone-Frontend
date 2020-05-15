@@ -2,6 +2,7 @@
   <div class="ingredients">
     <h1>All Ingredients</h1>
     <div v-for="ingredient in ingredients">
+      <img v-bind:src="ingredient.image_url" alt />
       <li>{{ ingredient.name }}</li>
       <p>{{ ingredient.price }}</p>
       <!-- <img v-bind:src="recipe.image_url" alt /> -->

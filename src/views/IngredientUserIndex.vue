@@ -1,9 +1,53 @@
 <template>
   <div class="ingredient_users">
-    <h1>Welcome to your Pantry!</h1>
-    <div v-for="ingredient_user in ingredient_users">
-      <!-- <p>{{ ingredient_user.ingredient.name }}</p> -->
-    </div>
+    <!-- Features -->
+    <section id="features">
+      <div class="container">
+        <header>
+          <h2>
+            <strong>Welcome to your pantry!</strong>
+          </h2>
+        </header>
+        <div class="row aln-center">
+          <div class="col-4 col-6-medium col-12-small">
+            <!-- Feature -->
+            <section v-for="ingredient_user in ingredient_users">
+              <a href="#" class="image featured">
+                <img v-bind:src="ingredient_users.ingredients.image_url" alt />
+              </a>
+              <header>
+                <h3>{{ ingredient_users.ingredient.name }}</h3>
+              </header>
+              <!-- <p>
+                This is
+                <strong>Strongly Typed</strong>
+                , a free, fully responsive site template by
+                <a
+                  href="http://html5up.net"
+                >HTML5 UP</a>
+                . Free for personal and commercial use under the
+                <a
+                  href="http://html5up.net/license"
+                >CCA 3.0 license</a>
+                .
+              </p>-->
+            </section>
+          </div>
+          <div class="col-12">
+            <ul class="actions">
+              <li>
+                <a href="#" class="button icon solid fa-file">Tell Me More</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <h1>Welcome to your Pantry!</h1> -->
+    <!-- <div v-for="ingredient_user in ingredient_users"> -->
+    <!-- <p>{{ ingredient_user.ingredient.name }}</p> -->
+    <!-- </div> -->
   </div>
 </template>
 
@@ -13,7 +57,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      ingredient_user: [],
+      ingredient_users: [],
     };
   },
   created: function() {

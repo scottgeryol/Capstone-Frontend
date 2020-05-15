@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
+    <div id="nav">
+      <li v-if="!jwt" class="nav-item">
+        <router-link class="nav-link" to="/signup">Signup</router-link>
+      </li>
+      <li v-if="!jwt" class="nav-item">
+        <router-link class="nav-link" to="/login">Login</router-link>
+      </li>
+      <li v-if="jwt" class="nav-item">
+        <router-link class="nav-link" to="/logout">Logout</router-link>
+      </li>
       <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>|
       <router-link to="/recipes">All Recipes</router-link>|
       <router-link to="/recipes/new">Create a Recipe</router-link>|
       <router-link to="/ingredients">All Ingredients</router-link>|
       <router-link to="/ingredient_users">My Pantry</router-link>|
-    </div>-->
+    </div>
 
     <!-- Header -->
     <section id="header">
@@ -26,13 +35,14 @@
                 <span>Home</span>
               </a>
             </li>
-            <li>
+            <!-- Dropdown -->
+            <!-- <li>
               <a href="#" class="icon fa-chart-bar">
                 <span>Dropdown</span>
               </a>
               <ul>
                 <li>
-                  <a href="/RecipesIndex">Recipes</a>
+                  <a href="/recipes">Recipes</a>
                 </li>
                 <li>
                   <a href="#">Magna phasellus</a>
@@ -58,15 +68,30 @@
                   <a href="#">Veroeros feugiat</a>
                 </li>
               </ul>
-            </li>
+            </li>-->
             <li>
               <a class="icon solid fa-cog" href="/about">
                 <span>About</span>
               </a>
             </li>
             <li>
-              <a class="icon solid fa-cog" href="../views/RecipesIndex.vue">
+              <a class="icon solid fa-cog" href="/recipes">
                 <span>Recipes</span>
+              </a>
+            </li>
+            <li>
+              <a class="icon solid fa-cog" href="/ingredient_users">
+                <span>Your Pantry</span>
+              </a>
+            </li>
+            <li>
+              <a class="icon solid fa-cog" href="/ingredients">
+                <span>Ingredients</span>
+              </a>
+            </li>
+            <li>
+              <a class="icon solid fa-cog" href="/recipes/new">
+                <span>Create a recipe</span>
               </a>
             </li>
             <li>
@@ -121,16 +146,15 @@
           </div>
           <div class="col-6 col-12-medium">
             <section>
-              <p>
-                Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phaselamet mollis tortor
-                congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada.
-              </p>
+              <p>When you acknowledge, as you must, that there is no such thing as perfect food, only the idea of it, then the real purpose of striving toward perfection becomes clear: to make people happy, that is what cooking is all about.</p>
+              <strong>- Thomas Keller</strong>
+              <p></p>
               <div class="row">
                 <div class="col-6 col-12-small">
                   <ul class="icons">
                     <li class="icon solid fa-home">
                       1234 Somewhere Road
-                      <br />Nashville, TN 00000
+                      <br />Chicago, IL 00000
                       <br />USA
                     </li>
                     <li class="icon solid fa-phone">(000) 000-0000</li>
@@ -173,5 +197,23 @@
   </div>
 </template>
 
-<style>
+<style >
+</style>
+
+<script>
+export default {
+  data: function() {
+    return {
+      jwt: null,
+    };
+  },
+  created: function() {
+    this.setJwt();
+  },
+  methods: {
+    setJwt: function() {
+      this.jwt = localStorage.jwt;
+    },
+  },
+};
 </script>

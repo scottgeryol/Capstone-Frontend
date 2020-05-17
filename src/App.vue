@@ -16,6 +16,7 @@
       <router-link to="/recipes/new">Create a Recipe</router-link>|
       <router-link to="/ingredients">All Ingredients</router-link>|
       <router-link to="/ingredient_users">My Pantry</router-link>|
+      <router-link to="/recipes/new">Recipe Search</router-link>|
     </div>
 
     <!-- Header -->
@@ -25,7 +26,8 @@
         <h1 id="logo">
           <a href="index.html">Pantry Pulls</a>
         </h1>
-        <p>A new way to find recipes!</p>
+        <p>A new way to find recipes</p>
+        <img src="https://www.dole.com/~/media/Mastheads/Fresh_Vegetables.jpg" alt />
 
         <!-- Nav -->
         <nav id="nav">
@@ -95,6 +97,11 @@
               </a>
             </li>
             <li>
+              <a class="icon solid fa-sitemap" href="/recipes/new">
+                <span>Recipe Search</span>
+              </a>
+            </li>
+            <li>
               <a class="icon solid fa-retweet" href="/login">
                 <span>Login</span>
               </a>
@@ -102,6 +109,11 @@
             <li>
               <a class="icon solid fa-sitemap" href="/logout">
                 <span>Logout</span>
+              </a>
+            </li>
+            <li>
+              <a class="icon solid fa-sitemap" href="/signup">
+                <span>Signup</span>
               </a>
             </li>
           </ul>

@@ -11,12 +11,10 @@
         <div class="row aln-center">
           <div class="col-4 col-6-medium col-12-small">
             <!-- Feature -->
-            <section v-for="ingredient_user in ingredient_users">
-              <a href="#" class="image featured">
-                <img v-bind:src="ingredient_users.ingredients.image_url" alt />
-              </a>
+            <div v-for="ingredient_user in ingredient_users">
+              <h3>{{ ingredient_user.ingredient.name }}</h3>
               <header>
-                <h3>{{ ingredient_users.ingredient.name }}</h3>
+                <!-- <h3 v-for="ingredient in ingredient_users.ingredients">{{ ingredient }}</h3> -->
               </header>
               <!-- <p>
                 This is
@@ -31,7 +29,7 @@
                 >CCA 3.0 license</a>
                 .
               </p>-->
-            </section>
+            </div>
           </div>
           <div class="col-12">
             <ul class="actions">
@@ -58,6 +56,8 @@ export default {
   data: function() {
     return {
       ingredient_users: [],
+      ingredients: [],
+      name: "",
     };
   },
   created: function() {
@@ -66,6 +66,22 @@ export default {
       console.log(this.ingredient_users);
     });
   },
-  methods: {},
+  methods: {
+    submit: function() {
+      var params = {
+        input_name: this.name,
+      };
+      var myVariable = 0;
+      axios
+        .post("/api/recipes", params)
+        .then(response => {
+          this.$router.push("/ingredient_user");
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+          this.status = error.response.status;
+        });
+    },
+  },
 };
 </script>

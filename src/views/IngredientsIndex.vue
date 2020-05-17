@@ -1,6 +1,9 @@
 <template>
   <div class="ingredients">
-    <h1>All Ingredients</h1>
+    <a href="#">
+      <strong>All Ingredients</strong>
+      <br />
+    </a>
     <div v-for="ingredient in ingredients">
       <img v-bind:src="ingredient.image_url" alt />
       <li>{{ ingredient.name }}</li>
@@ -19,6 +22,7 @@ export default {
   data: function() {
     return {
       ingredients: [],
+      price: [],
     };
   },
   created: function() {

@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <img v-bind:src="recipe.image_url" alt />
-    <h2>Name: {{ recipe.name }}</h2>
+    <h2>{{ recipe.name }}</h2>
     <p>Chef: {{ recipe.chef }}</p>
     <p>Description: {{ recipe.description }}</p>
     <!-- ingredients map no longer works -->
-    <p>Ingredients: {{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</p>
+    <!-- <ul>Ingredients Needed: {{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</ul> -->
     <p>Prep Time: {{ recipe.prep_time }}</p>
     <p>Directions: {{ recipe.directions }}</p>
     <p>Notes: {{ recipe.notes }}</p>
@@ -14,7 +14,7 @@
     </button>
     <p></p>
     <br />
-    <button class="btn btn-primary" v-on:click="destroyRecipe(recipe)">Destroy recipe</button>
+    <button class="btn btn-primary" v-on:click="destroyRecipe(recipe)">Delete recipe</button>
     <br />
   </div>
   <!-- <br />

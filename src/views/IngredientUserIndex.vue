@@ -12,40 +12,45 @@
           <div class="col-4 col-6-medium col-12-small">
             <!-- Feature -->
             <div v-for="ingredient_user in ingredient_users">
-              <h3>{{ ingredient_user.ingredient.name }}</h3>
-              <header>
-                <!-- <h3 v-for="ingredient in ingredient_users.ingredients">{{ ingredient }}</h3> -->
-              </header>
-              <!-- <p>
-                This is
-                <strong>Strongly Typed</strong>
-                , a free, fully responsive site template by
-                <a
-                  href="http://html5up.net"
-                >HTML5 UP</a>
-                . Free for personal and commercial use under the
-                <a
-                  href="http://html5up.net/license"
-                >CCA 3.0 license</a>
-                .
-              </p>-->
+              <h3
+                v-on:click="query=ingredient_user.ingredient.name"
+              >{{ ingredient_user.ingredient.name }}</h3>
+            </div>
+            <div class="form-group">
+              <label>Add Ingredient:</label>
+              <form v-on:submit.prevent="submit()">
+                <input type="text" class="form-control" v-model="ingredients" />
+                <input type="submit" class="btn btn-primary" value="Add" />
+              </form>
+              <br />
+              <form v-on:submit.prevent="search()">
+                <input type="text" class="form-control" v-model="query" />
+                <input type="submit" class="btn btn-primary" value="Search" />
+              </form>
+              <br />
+              <div v-for="recipe in recipesearch">
+                <h4>
+                  <a v-bind:href="recipe.recipe.url" target="_blank">{{ recipe.recipe.label }}</a>
+                </h4>
+                <img v-bind:src="recipe.recipe.image" alt />
+                <div v-for="ingredientLine in recipe.recipe.ingredientLines">{{ ingredientLine }}</div>
+                <br />
+                <p>Calories: {{ recipe.recipe.calories }}</p>
+                <div v-for="healthLabel in recipe.recipe.healthLabels">{{ healthLabel }}</div>
+                <br />
+              </div>
             </div>
           </div>
           <div class="col-12">
             <ul class="actions">
               <li>
-                <a href="#" class="button icon solid fa-file">Tell Me More</a>
+                <a href="/recipes" class="button icon solid fa-file">Lets get cooking!</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- <h1>Welcome to your Pantry!</h1> -->
-    <!-- <div v-for="ingredient_user in ingredient_users"> -->
-    <!-- <p>{{ ingredient_user.ingredient.name }}</p> -->
-    <!-- </div> -->
   </div>
 </template>
 
@@ -56,8 +61,12 @@ export default {
   data: function() {
     return {
       ingredient_users: [],
+      ingredient_user: {},
       ingredients: [],
       name: "",
+      recipesearch: [],
+      query: "",
+      // ingredientLines: "",
     };
   },
   created: function() {
@@ -69,11 +78,11 @@ export default {
   methods: {
     submit: function() {
       var params = {
-        input_name: this.name,
+        input_ingredient_id: this.ingredient_id,
       };
       var myVariable = 0;
       axios
-        .post("/api/recipes", params)
+        .post("/api/ingredient_users", params)
         .then(response => {
           this.$router.push("/ingredient_user");
         })
@@ -81,6 +90,12 @@ export default {
           this.errors = error.response.data.errors;
           this.status = error.response.status;
         });
+    },
+    search: function() {
+      axios.get("/api/recipesearch?query=" + this.query).then(response => {
+        this.recipesearch = response.data.hits;
+        console.log(this.recipesearch);
+      });
     },
   },
 };

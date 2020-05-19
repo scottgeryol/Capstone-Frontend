@@ -16,7 +16,7 @@
       <router-link to="/recipes/new">Create a Recipe</router-link>|
       <router-link to="/ingredients">All Ingredients</router-link>|
       <router-link to="/ingredient_users">My Pantry</router-link>|
-      <router-link to="/recipes/new">Recipe Search</router-link>|
+      <router-link to="/recipesearch">Recipe Search</router-link>|
     </div>
 
     <!-- Header -->
@@ -71,19 +71,14 @@
                 </li>
               </ul>
             </li>-->
-            <li>
+            <!-- <li>
               <a class="icon solid fa-cog" href="/about">
                 <span>About</span>
               </a>
-            </li>
-            <li>
-              <a class="icon solid fa-cog" href="/recipes">
-                <span>Recipes</span>
-              </a>
-            </li>
+            </li>-->
             <li>
               <a class="icon solid fa-cog" href="/ingredient_users">
-                <span>Your Pantry</span>
+                <span>Pantry</span>
               </a>
             </li>
             <li>
@@ -92,12 +87,17 @@
               </a>
             </li>
             <li>
+              <a class="icon solid fa-cog" href="/recipes">
+                <span>Recipes</span>
+              </a>
+            </li>
+            <li>
               <a class="icon solid fa-cog" href="/recipes/new">
                 <span>Create a recipe</span>
               </a>
             </li>
             <li>
-              <a class="icon solid fa-sitemap" href="/recipes/new">
+              <a class="icon solid fa-sitemap" href="/recipesearch">
                 <span>Recipe Search</span>
               </a>
             </li>

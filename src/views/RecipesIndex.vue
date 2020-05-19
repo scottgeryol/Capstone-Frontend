@@ -30,7 +30,7 @@
           <div class="col-12">
             <ul class="actions">
               <li>
-                <a href="#" class="button icon solid fa-file">Tell Me More</a>
+                <!-- <a href="#" class="button icon solid fa-file">Tell Me More</a> -->
               </li>
             </ul>
           </div>

@@ -17,14 +17,11 @@
               >{{ ingredient_user.ingredient.name }}</h3>
             </div>
             <div class="form-group">
-              <label>Add Ingredient:</label>
-              <form v-on:submit.prevent="submit()">
-                <input type="text" class="form-control" v-model="ingredients" />
-                <input type="submit" class="btn btn-primary" value="Add" />
-              </form>
+              <strong>Search for a new recipe!</strong>
               <br />
               <form v-on:submit.prevent="search()">
                 <input type="text" class="form-control" v-model="query" />
+                <br />
                 <input type="submit" class="btn btn-primary" value="Search" />
               </form>
               <br />

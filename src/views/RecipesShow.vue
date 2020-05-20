@@ -1,14 +1,37 @@
 <template>
   <div class="container">
     <img v-bind:src="recipe.image_url" class="recipe-image" alt />
+    <br />
     <h2>{{ recipe.name }}</h2>
-    <p>Chef: {{ recipe.chef }}</p>
-    <p>Description: {{ recipe.description }}</p>
-    <!-- ingredients map no longer works -->
-    <!-- <ul>Ingredients Needed: {{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</ul> -->
-    <p>Prep Time: {{ recipe.prep_time }}</p>
-    <p>Directions: {{ recipe.directions }}</p>
-    <p>Notes: {{ recipe.notes }}</p>
+    <div>
+      <strong>Chef:</strong>
+      {{ recipe.chef }}
+    </div>
+    <br />
+    <div>
+      <strong>Description:</strong>
+      {{ recipe.description }}
+    </div>
+    <br />
+    <strong>Ingredients:</strong>
+    <br />
+    <div v-for="ingredient in recipe.ingredients">{{ ingredient.name }}</div>
+    <br />
+    <div>
+      <strong>Prep Time:</strong>
+      {{ recipe.prep_time }}
+    </div>
+    <br />
+    <div>
+      <strong>Directions:</strong>
+      {{ recipe.directions }}
+    </div>
+    <br />
+    <div>
+      <strong>Notes:</strong>
+      {{ recipe.notes }}
+    </div>
+    <br />
     <button>
       <router-link to="/recipes">Back to all recipes</router-link>
     </button>

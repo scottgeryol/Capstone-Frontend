@@ -1,24 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <li v-if="!jwt" class="nav-item">
-        <router-link class="nav-link" to="/signup">Signup</router-link>
-      </li>
-      <li v-if="!jwt" class="nav-item">
-        <router-link class="nav-link" to="/login">Login</router-link>
-      </li>
-      <li v-if="jwt" class="nav-item">
-        <router-link class="nav-link" to="/logout">Logout</router-link>
-      </li>
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>|
-      <router-link to="/recipes">All Recipes</router-link>|
-      <router-link to="/recipes/new">Create a Recipe</router-link>|
-      <router-link to="/ingredients">All Ingredients</router-link>|
-      <router-link to="/ingredient_users">My Pantry</router-link>|
-      <!-- <router-link to="/recipesearch">Recipe Search</router-link>| -->
-    </div>
-
     <!-- Header -->
     <section id="header">
       <div class="container">
@@ -106,17 +87,17 @@
                 <span>Recipe Search</span>
               </a>
             </li>-->
-            <li>
+            <li v-if="!jwt">
               <a class="icon solid fa-retweet" href="/login">
                 <span>Login</span>
               </a>
             </li>
-            <li>
+            <li v-if="jwt">
               <a class="icon solid fa-sitemap" href="/logout">
                 <span>Logout</span>
               </a>
             </li>
-            <li>
+            <li v-if="!jwt">
               <a class="icon solid fa-sitemap" href="/signup">
                 <span>Signup</span>
               </a>

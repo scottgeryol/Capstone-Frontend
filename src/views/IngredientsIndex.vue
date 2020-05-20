@@ -12,13 +12,19 @@
           <a href="#" class="image featured">
             <img v-bind:src="ingredient.image_url" alt class="ingredient-image" />
           </a>
-          
-          <header>
-            <h3>{{ ingredient.name }}</h3>
-            <strong><p>{{ ingredient.price }}</p></strong>
-            <a href="/ingredient_users" class="button icon solid fa-file">Add to your pantry!</a>
-            <a href="/ingredient_users" class="button icon solid fa-file">Add to your cart!</a>
 
+          <header>
+            <strong>
+              <h3>{{ ingredient.name }}</h3>
+            </strong>
+            <strong>
+              <p>{{ ingredient.price }}</p>
+            </strong>
+            <button
+              v-on:click="createIngredientUser(ingredient)"
+              class="button icon solid fa-file"
+            >Add to your pantry!</button>
+            <a href="/ingredient_users" class="button icon solid fa-file">Add to your cart!</a>
           </header>
           <!-- <p>
             This is
@@ -38,12 +44,11 @@
       <img v-bind:src="ingredient.image_url" alt />
       <li>{{ ingredient.name }}</li>
       <p>{{ ingredient.price }}</p>
-      <!-- <img v-bind:src="recipe.image_url" alt /> -->
-      <!-- <button>More info</button> -->
-      <!-- <li>
+    <!-- <img v-bind:src="recipe.image_url" alt />-->
+    <!-- <button>More info</button> -->
+    <!-- <li>
         <a href="/ingredient_users" class="button icon solid fa-file">Add to your pantry!</a>
-      </li> -->
-    </div> 
+    </li>-->
   </div>
 </template>
 
@@ -70,6 +75,14 @@ export default {
       console.log(this.ingredients);
     });
   },
-  methods: {},
+  methods: {
+    createIngredientUser: function(ingredient) {
+      var params = { ingredient_id: ingredient.id };
+      axios.post("/api/ingredient_users", params).then(response => {
+        console.log(response);
+        this.$router.push("/ingredient_users");
+      });
+    },
+  },
 };
 </script>

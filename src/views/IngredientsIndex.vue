@@ -12,8 +12,10 @@
           <a href="#" class="image featured">
             <img v-bind:src="ingredient.image_url" alt class="ingredient-image" />
           </a>
+          
           <header>
             <h3>{{ ingredient.name }}</h3>
+            <strong><p>{{ ingredient.price }}</p></strong>
             <a href="/ingredient_users" class="button icon solid fa-file">Add to your pantry!</a>
             <a href="/ingredient_users" class="button icon solid fa-file">Add to your cart!</a>
 
@@ -47,7 +49,7 @@
 
 <style>
 .ingredient-image {
-  height: 400px;
+  height: 375px;
   object-fit: cover;
 }
 </style>

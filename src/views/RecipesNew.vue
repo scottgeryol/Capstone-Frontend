@@ -13,7 +13,7 @@
       <input type="string" v-model="newRecipeIngredients" />
       Description:
       <input type="string" v-model="newRecipeDescription" />
-      Directions:
+      <br />Directions:
       <input type="string" v-model="newRecipeDirections" />
       Prep Time:
       <input type="string" v-model="newRecipePrepTime" />

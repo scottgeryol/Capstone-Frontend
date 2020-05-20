@@ -2,7 +2,7 @@
   <div class="signup">
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1>Signup</h1>
+        <h1>Signup:</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
@@ -23,10 +23,12 @@
         <div class="form-group">
           <label>Password:</label>
           <input type="password" class="form-control" v-model="password" />
+          <small>{{ 20 - password.length }} characters remaining</small>
         </div>
         <div class="form-group">
           <label>Password confirmation:</label>
           <input type="password" class="form-control" v-model="passwordConfirmation" />
+          <small>{{ 20 - password.length }} characters remaining</small>
         </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>

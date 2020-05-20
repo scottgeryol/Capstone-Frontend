@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img v-bind:src="recipe.image_url" alt />
+    <img v-bind:src="recipe.image_url" class="recipe-image" alt />
     <h2>{{ recipe.name }}</h2>
     <p>Chef: {{ recipe.chef }}</p>
     <p>Description: {{ recipe.description }}</p>
@@ -21,6 +21,15 @@
   <button class="/recipes" v-on:click>Back to all recipes</button>
   <br />-->
 </template>
+
+<style>
+.recipe-image {
+  height: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+</style>
 
 <script>
 import axios from "axios";

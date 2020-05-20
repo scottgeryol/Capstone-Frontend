@@ -15,6 +15,8 @@
           <header>
             <h3>{{ ingredient.name }}</h3>
             <a href="/ingredient_users" class="button icon solid fa-file">Add to your pantry!</a>
+            <a href="/ingredient_users" class="button icon solid fa-file">Add to your cart!</a>
+
           </header>
           <!-- <p>
             This is

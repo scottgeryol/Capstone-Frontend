@@ -1,5 +1,15 @@
 <template>
   <div class="home">
+
+      <!-- Banner -->
+  <section id="banner">
+    <div class="container">
+      <p>
+      <strong>Lets start cooking!</strong>
+      </p>
+    </div>
+  </section>
+
     <!-- Main -->
     <section id="main">
       <div class="container">
@@ -11,18 +21,18 @@
               <header>
                 <h2>
                   <a href="#">
-                    <strong>Welcome to Pantry Pulls - Lets start cooking!</strong>
+                    <strong>What is Pantry Pulls?</strong>
                     <br />
                   </a>
                 </h2>
               </header>
               <a href="#" class="image featured">
                 <img
-                  src="https://www.moneycrashers.com/wp-content/uploads/2019/01/pantry-challenge-boxes-jars-woman-staring-1068x713.jpg"
+                  src="https://www.moneycrashers.com/wp-content/uploads/2019/01/pantry-challenge-boxes-jars-woman-staring-1068x713.jpg" class="home-image"
                   alt
                 />
               </a>
-              <h3>What is Pantry Pulls?</h3>
+              <!-- <h3>What is Pantry Pulls?</h3> -->
               <p>We are the first ever dynamic recipe search app. We are dedicated to helping you limit trips to the grocery store, reduce food waste, and learn to cook something new!</p>
               <ul class="actions">
                 <li>
@@ -81,6 +91,9 @@
 </template>
 
 <style>
+/* .home-image {
+  heigh
+} */
 </style>
 
 <script>

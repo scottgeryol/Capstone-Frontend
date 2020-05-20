@@ -66,7 +66,6 @@ export default {
       name: "",
       recipesearch: [],
       query: "",
-      // ingredientLines: "",
     };
   },
   created: function() {

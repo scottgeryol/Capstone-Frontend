@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <img v-if="status" v-bind:src="`https://http.cat/${status}`" alt />
-    <h1>New Recipe</h1>
+    <h1>New Recipe:</h1>
     <form v-on:submit.prevent="createRecipe()">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>

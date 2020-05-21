@@ -44,7 +44,7 @@
           <div class="col-12">
             <ul class="actions">
               <li>
-                <a href="/recipes" class="button icon solid fa-file">Lets get cooking!</a>
+                <a href="/recipes" class="button icon solid fa-file">Lets start cooking!</a>
               </li>
             </ul>
           </div>

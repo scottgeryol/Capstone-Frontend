@@ -5,7 +5,8 @@
   <section id="banner">
     <div class="container">
       <p>
-      <strong>Lets start cooking!</strong>
+      <strong>“A recipe has no soul. You as the cook must bring soul to the recipe.”
+– Thomas Keller</strong>
       </p>
     </div>
   </section>

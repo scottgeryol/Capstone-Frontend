@@ -22,8 +22,15 @@
                 <h3>{{ recipe.name }}</h3>
               </header>
               <p>{{ recipe.description }}</p>
-              <p>Chef: {{ recipe.chef }}</p>
-              <ul>Ingredients Needed: {{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</ul>
+              <div>
+                <strong>Chef:</strong>
+                <p>{{ recipe.chef }}</p>
+              </div>
+              <div>
+                <strong>Ingredients Needed:</strong>
+                <ul>{{ recipe.ingredients.map(ingredient => ingredient.name).join(", ") }}</ul>
+              </div>
+
               <router-link v-bind:to="`/recipes/${recipe.id}`">View Recipe!</router-link>
             </section>
           </div>

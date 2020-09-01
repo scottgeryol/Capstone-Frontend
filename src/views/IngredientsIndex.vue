@@ -1,7 +1,9 @@
 <template>
   <div class="ingredients">
     <a href="#">
-      <strong>All Ingredients</strong>
+      <center>
+        <strong>All Ingredients</strong>
+      </center>
       <br />
     </a>
 
@@ -56,6 +58,8 @@
 .ingredient-image {
   height: 375px;
   object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
 </style>
 
@@ -63,22 +67,22 @@
 import axios from "axios";
 
 export default {
-  data: function() {
+  data: function () {
     return {
       ingredients: [],
       price: [],
     };
   },
-  created: function() {
-    axios.get("/api/ingredients").then(response => {
+  created: function () {
+    axios.get("/api/ingredients").then((response) => {
       this.ingredients = response.data;
       console.log(this.ingredients);
     });
   },
   methods: {
-    createIngredientUser: function(ingredient) {
+    createIngredientUser: function (ingredient) {
       var params = { ingredient_id: ingredient.id };
-      axios.post("/api/ingredient_users", params).then(response => {
+      axios.post("/api/ingredient_users", params).then((response) => {
         console.log(response);
         this.$router.push("/ingredient_users");
       });

@@ -30,6 +30,7 @@
                   <a v-bind:href="recipe.recipe.url" target="_blank">{{ recipe.recipe.label }}</a>
                 </h4>
                 <img v-bind:src="recipe.recipe.image" alt />
+                <br />
                 <strong>Ingredients:</strong>
                 <div v-for="ingredientLine in recipe.recipe.ingredientLines">{{ ingredientLine }}</div>
                 <br />

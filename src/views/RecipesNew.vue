@@ -5,22 +5,46 @@
     <form v-on:submit.prevent="createRecipe()">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>Name:
+      </ul>
+      Name:
       <input type="string" v-model="newRecipeName" />
+      <br />
+      <br />
       Chef:
       <input type="string" v-model="newRecipeChef" />
+      <br />
+      <br />
+
       Ingredients:
       <input type="string" v-model="newRecipeIngredients" />
+      <br />
+      <br />
+
       Description:
       <input type="string" v-model="newRecipeDescription" />
-      <br />Directions:
+      <br />
+      <br />
+
+      Directions:
       <input type="string" v-model="newRecipeDirections" />
+      <br />
+      <br />
+
       Prep Time:
       <input type="string" v-model="newRecipePrepTime" />
+      <br />
+      <br />
+
       Notes:
       <input type="string" v-model="newRecipeNotes" />
+      <br />
+      <br />
+
       Image Url:
       <input type="string" v-model="newRecipeImageUrl" />
+      <br />
+      <br />
+
       <p></p>
       <input type="submit" value="New" />
     </form>

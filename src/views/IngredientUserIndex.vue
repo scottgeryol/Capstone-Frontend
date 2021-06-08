@@ -6,6 +6,7 @@
         <header>
           <h2>
             <strong>Welcome to your pantry!</strong>
+            <p>Here are all of your available ingredients currently available ins your home. Click on one below and search for a new recipe below!</p>
           </h2>
         </header>
         <div class="row aln-center">
